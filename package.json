@@ -8,13 +8,16 @@
     "dev": "remix dev --manual -c \"npm run start\"",
     "start": "wrangler pages dev --compatibility-date=2023-06-21 ./public",
     "typecheck": "tsc",
-    "pages:deploy": "npm run build && wrangler pages deploy ./public"
+    "pages:deploy": "npm run build && wrangler pages deploy ./public",
+    "gen:migrate": "drizzle-kit generate:sqlite --out migrations --schema app/db/schema.ts"
   },
   "dependencies": {
     "@remix-run/cloudflare": "^2.0.1",
     "@remix-run/cloudflare-pages": "^2.0.1",
     "@remix-run/css-bundle": "^2.0.1",
     "@remix-run/react": "^2.0.1",
+    "drizzle-kit": "^0.19.13",
+    "drizzle-orm": "^0.28.6",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
